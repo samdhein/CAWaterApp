@@ -40,17 +40,24 @@ const Main = ( ) => {
                 <div className='box'>
                     <img src='./imgs/ca_outline_reservoirs.jpg' alt='california outline' height="450px"></img>
                     <div>
-                        <div><Link to={"/trinity"}>Lake Trinity</Link></div>
-                        <div><Link to={"/shasta"}>Lake Shasta</Link></div>
+                        <div><Link to={"/trinity"}>Trinity Lake</Link></div>
+                        <div><Link to={"/shasta"}>Shasta Lake</Link></div>
                         <div><Link to={"/oroville"}>Lake Oroville</Link></div>
                         <div><Link to={"/sanluis"}>San Luis Reservoir</Link></div>
                         <div><Link to={"/cachuma"}>Cachuma Lake</Link></div>
                         <div><Link to={"/castaic"}>Castaic Lake</Link></div>
+                        <p>TBU:</p>
+                        <ul>
+                            <li>New Melones</li>
+                            <li>Don Pedro</li>
+                            <li>Millerton</li>
+                            <li>Berryessa</li>
+                        </ul>
                     </div>
                 </div>
                 <p>
                     California's State Water Project and the federal government's Central Valley Project collect runoff from California's wet regions 
-                    for distribution to dry-region farms and urban centers. After more than a century of public investment in water storage and 
+                    for distribution to farms and urban centers in dry regions. After more than a century of public investment in water storage and 
                     conveyance infrastructure, most Californians today rely upon water imports originating from a small handful of distant reservoirs.
                 </p>
 

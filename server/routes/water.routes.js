@@ -5,10 +5,7 @@ const SanluisController = require("../controllers/sanluis.controller")
 const CastaicController = require("../controllers/castaic.controller")
 const CachumaController = require("../controllers/cachuma.controller")
 
-// initially comment all but the index
-
 module.exports = app => {
-    // console.log("server/routes")
     app.get("/api", OrovilleController.index) // root, routes to Oroville Controller
     app.post("/api/oroville/measurements", OrovilleController.createOrovilleMeasurement) // create an oroville measurement
     app.get("/api/oroville/measurements", OrovilleController.allOrovilleMeasurements)  // get all oroville measurements
