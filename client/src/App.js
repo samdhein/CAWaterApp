@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-        <Route path="/detail">
+        <Route path="/:reservoir">
             <Detail />
           </Route>
           <Route path="/">

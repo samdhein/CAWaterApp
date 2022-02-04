@@ -31,14 +31,16 @@ useEffect(()=>{
         <div>
             <div>
                 <h1>California Water Resource Availability</h1>
-                <h2>Message from backend: {message} </h2>
+                {/* <h2>Message from backend: {message} </h2> */}
                 <p>
                     Much of California's water comes from a few key sources. 
                     How much water is available within key storage facilities at this point in the water year?
                 </p>
-                <p>Lake Oroville</p>
-                <p>Shasta Lake</p>
-                <p>Trinity Lake</p>
+                <div>
+                    <div><Link to={"/oroville"}>Lake Oroville</Link></div>
+                   <div><Link to={"/shasta"}>Lake Shasta</Link></div>
+                    <div><Link to={"/trinity"}>Lake Trinity</Link></div>
+                </div>
                 <img src='./imgs/ca_outline.jpg' alt='california outline'></img>
                 <p>
                     In California, the State Water Project collects runoff from wet regions of the state for distribution to dry-region farms

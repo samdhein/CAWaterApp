@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Chart from '../components/Chart';
 
 const Detail = ( ) => {
 
+    const {reservoir} = useParams()
     const [data, setData] = useState()
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/oroville/measurements')
+        axios.get(`http://localhost:8000/api/${reservoir}/measurements`)
             .then(res=>setData(res.data))
             .catch(err=>console.log(err))
     },[])
@@ -17,8 +19,9 @@ const Detail = ( ) => {
             {
                 data?(
                     <div>
+                        <h1>{reservoir.toUpperCase()}</h1>
                         <Chart data={data} />
-                        <table>
+                        {/* <table>
                             <thead>
                                 <tr>
                                     <td>Name</td>
@@ -39,7 +42,7 @@ const Detail = ( ) => {
                                     ))
                                 }
                             </tbody>
-                        </table>
+                        </table> */}
                     </div>
                 ):
                 <h2>Loading...</h2>
