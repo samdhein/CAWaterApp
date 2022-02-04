@@ -2,11 +2,18 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Chart from '../components/Chart';
+import { useHistory } from 'react-router-dom';
+import './css/views.css'
 
 const Detail = ( ) => {
 
     const {reservoir} = useParams()
     const [data, setData] = useState()
+    const history = useHistory()
+
+    const returnHome = () => {
+        history.push("/")
+    }
 
     useEffect(()=>{
         axios.get(`http://localhost:8000/api/${reservoir}/measurements`)
@@ -15,12 +22,13 @@ const Detail = ( ) => {
     },[])
 
     return (
-        <div>
+        <div className='container'>
             {
                 data?(
                     <div>
                         <h1>{reservoir.toUpperCase()}</h1>
                         <Chart data={data} />
+                        <button onClick={returnHome}>Return Home</button>
                         {/* <table>
                             <thead>
                                 <tr>
@@ -45,7 +53,10 @@ const Detail = ( ) => {
                         </table> */}
                     </div>
                 ):
-                <h2>Loading...</h2>
+                <div>
+                    <h2>Loading...</h2>
+                    <button onClick={returnHome}>Return Home</button>
+                </div>
             }
         </div>
     )

@@ -1,0 +1,14 @@
+.container {
+    margin: 0% 5%;
+    align-content: center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rechart-wrapper {
+    margin: 0 auto;
+}

@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import Chart from '../components/Chart'
+import './css/views.css';
+
 // import CreateForm from '../components/CreateForm';
 // import DisplayTable from '../components/DisplayTable';
 
@@ -20,32 +22,36 @@ const Main = ( ) => {
     }
     
 
-//index route
-useEffect(()=>{
-    axios.get('http://localhost:8000/api')
-        .then(res=>setMessage(res.data.message))
-        .catch(err=>console.log(err))
-},[])
+// //index route
+// useEffect(()=>{
+//     axios.get('http://localhost:8000/api')
+//         .then(res=>setMessage(res.data.message))
+//         .catch(err=>console.log(err))
+// },[])
 
     return (
-        <div>
+        <div className='container'>
             <div>
                 <h1>California Water Resource Availability</h1>
                 {/* <h2>Message from backend: {message} </h2> */}
                 <p>
-                    Much of California's water comes from a few key sources. 
-                    How much water is available within key storage facilities at this point in the water year?
+                    How much water is currently stored in California's key reservoirs?
                 </p>
-                <div>
-                    <div><Link to={"/oroville"}>Lake Oroville</Link></div>
-                   <div><Link to={"/shasta"}>Lake Shasta</Link></div>
-                    <div><Link to={"/trinity"}>Lake Trinity</Link></div>
+                <div className='box'>
+                    <img src='./imgs/ca_outline_reservoirs.jpg' alt='california outline' height="450px"></img>
+                    <div>
+                        <div><Link to={"/trinity"}>Lake Trinity</Link></div>
+                        <div><Link to={"/shasta"}>Lake Shasta</Link></div>
+                        <div><Link to={"/oroville"}>Lake Oroville</Link></div>
+                        <div><Link to={"/sanluis"}>San Luis Reservoir</Link></div>
+                        <div><Link to={"/cachuma"}>Cachuma Lake</Link></div>
+                        <div><Link to={"/castaic"}>Castaic Lake</Link></div>
+                    </div>
                 </div>
-                <img src='./imgs/ca_outline.jpg' alt='california outline'></img>
                 <p>
-                    In California, the State Water Project collects runoff from wet regions of the state for distribution to dry-region farms
-                    and urban centers. After more than a century of development, most Californians depend upon the state's extensive
-                    water conveyance infrastructure to meet their basic needs. 
+                    California's State Water Project and the federal government's Central Valley Project collect runoff from California's wet regions 
+                    for distribution to dry-region farms and urban centers. After more than a century of public investment in water storage and 
+                    conveyance infrastructure, most Californians today rely upon water imports originating from a small handful of distant reservoirs.
                 </p>
 
                 {/* <CreateForm reloadList={reloadList} /> */}

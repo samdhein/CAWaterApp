@@ -1,17 +1,13 @@
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import React, {useEffect, useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import '../views/css/views.css'
 
 const Chart = (props) => {
     const data = props
-    const history = useHistory()
 
-    const returnHome = () => {
-        history.push("/")
-    }
 
     const renderLineChart = (
-        <ResponsiveContainer width='80%' height={400} margin="auto">    
+        <ResponsiveContainer width='80%' height={400} margin="0 auto">    
             <LineChart data={data.data}>
                 <Line type="monotone" dataKey="STORAGE" stroke="#8884d8" />
                 <CartesianGrid stroke="#ccc" />
@@ -24,8 +20,7 @@ const Chart = (props) => {
 return (
     <div>
         {renderLineChart}
-        <h3>Storage represented in acre-feet.</h3>
-        <button onClick={returnHome}>Home</button>
+        <h3>Storage represented in acre-feet</h3>
     </div>
 
 
