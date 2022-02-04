@@ -57,7 +57,7 @@ const Main = ( ) => {
                 </div>
                 <p>
                     California's State Water Project and the federal government's Central Valley Project collect runoff from California's wet regions 
-                    for distribution to farms and urban centers in dry regions. After more than a century of public investment in water storage and 
+                    for distribution to farms and urban centers in dry regions. After more than a century of public investment in water
                     conveyance infrastructure, most Californians today rely upon water imports originating from a small handful of distant reservoirs.
                 </p>
 
