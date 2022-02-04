@@ -7,7 +7,7 @@ const cors = require("cors")
 require('./config/mongoose.config')
 
 // config express, cors
-app.use(cors()) // 2 communicate btw front and back ends
+app.use(cors()) // to communicate btw front and back ends
 app.use(express.json(), express.urlencoded({ extended: true })) // POST method
 
 // routes

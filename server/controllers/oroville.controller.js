@@ -1,23 +1,23 @@
-const Water = require("../models/water.model")
+const Oroville = require("../models/oroville.model")
 
 module.exports.index = (req, res) => {
     res.json({message: "Hello, you've reached the index"})
 }
+
+// show all oroville measurements
+module.exports.allOrovilleMeasurements = (req, res) => {
+    Oroville.find().sort({DATE: 1})
+        .then(results=>res.json(results))
+        .catch(err=> res.status(400).json(err))
+}
+
+// create new reservoir measurement
+module.exports.createOrovilleMeasurement = (req, res) => {
+    Oroville.create(req.body)
+        .then(newMeasurement => res.json(newMeasurement))
+        .catch(err=> res.status(400).json(err))
+}
 ///////////
-// show all authors
-module.exports.allAuthors = (req, res) => {
-    Author.find()
-        .then(authors=>res.json(authors))
-        .catch(err=> res.status(400).json(err))
-}
-
-// create author
-module.exports.createAuthor = (req, res) => {
-    Author.create(req.body)
-        .then(newAuthor => res.json(newAuthor))
-        .catch(err=> res.status(400).json(err))
-}
-
 // show one author
 module.exports.oneAuthor = (req, res) => {
     Author.findOne({_id: req.params.id})
