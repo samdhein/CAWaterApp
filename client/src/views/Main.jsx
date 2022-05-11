@@ -15,7 +15,6 @@ const Main = ( ) => {
 
     const [message, setMessage] = useState("Loading...")
     const [refresh, setRefresh] = useState(false)
-    const data2 = []
 
     const reloadList = () =>{
         setRefresh(!refresh)

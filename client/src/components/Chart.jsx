@@ -1,6 +1,6 @@
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import React, {useEffect, useState} from 'react';
-import '../views/css/views.css'
+import styles from './Chart.module.css'; //encapsulate rules for chart here;
 
 const Chart = (props) => {
     const data = props
